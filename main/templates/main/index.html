@@ -3,7 +3,7 @@
 {% block content%}
     <div class="row">
         {% for object in object_list %}
-            {% include 'main/includes/inc.html' %}
+            {% include 'main/includes/inc.html' with object=object %}
         {% endfor %}
     </div>
 {% endblock %}

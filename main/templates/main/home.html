@@ -1,13 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<h1>Home page</h1>
-<a class="p-2 btn btn-outline-primary" href="main/contacts.html">Контакты</a>
-</body>
-</html>
+{% extends 'main/base.html' %}
+{% load my tags %}
+{% block content%}
+    <div class="row">
+        {% for object in object_list %}
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top"
+                         src="{{ object.photo|mymedia }}#"
+                         alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">{{ object.name|title }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
