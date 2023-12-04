@@ -10,6 +10,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'purchase_price', 'category')  # Выбранные поля для отображения в списке
+    list_display = ('id', 'title', 'purchase_price', 'category',)  # Выбранные поля для отображения в списке
     list_filter = ('category',)  # Настройка фильтра по категории
     search_fields = ('title', 'description',)  # Настройка поиска по названию и описанию
